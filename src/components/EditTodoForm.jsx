@@ -6,7 +6,8 @@ function EditTodoForm({ todo, editTodo }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    editTodo(todo.id, value);
+    if (value === "") editTodo(todo.id, todo.task);
+    else editTodo(todo.id, value);
     setValue("");
   };
 
